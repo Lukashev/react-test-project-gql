@@ -31,9 +31,10 @@ function App() {
   return (
     <AppContext.Provider value={{ activeCards, setActiveCard }}>
       <div className="App">
-        {data.continents.map((item) => (
-          <Card key={item.code} {...item} />
-        ))}
+        {data.continents.map((item, index) => {
+          const id = `${item.code}${index}`
+          return <Card key={id} {...item} id={id} />
+        })}
       </div>
     </AppContext.Provider>
   )

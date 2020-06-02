@@ -3,12 +3,11 @@
   max-width: 480px;
   margin: 15px;
   padding: 15px;
-  transition: all 0.5s ease;
+  transition: border-color 0.5s ease;
   &_list {
     margin: 5px 50px;
   }
   &:hover {
     cursor: pointer;
-    border-color: red;
   }
 }
