@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/react-test-project-gql/static/css/main.7ecf9349.chunk.css",
+    "main.js": "/react-test-project-gql/static/js/main.dd018d9c.chunk.js",
+    "main.js.map": "/react-test-project-gql/static/js/main.dd018d9c.chunk.js.map",
+    "runtime-main.js": "/react-test-project-gql/static/js/runtime-main.5c027570.js",
+    "runtime-main.js.map": "/react-test-project-gql/static/js/runtime-main.5c027570.js.map",
+    "static/js/2.59297334.chunk.js": "/react-test-project-gql/static/js/2.59297334.chunk.js",
+    "static/js/2.59297334.chunk.js.map": "/react-test-project-gql/static/js/2.59297334.chunk.js.map",
+    "index.html": "/react-test-project-gql/index.html",
+    "precache-manifest.7ee5041677089f4b032725b6cef4c1ac.js": "/react-test-project-gql/precache-manifest.7ee5041677089f4b032725b6cef4c1ac.js",
+    "service-worker.js": "/react-test-project-gql/service-worker.js",
+    "static/css/main.7ecf9349.chunk.css.map": "/react-test-project-gql/static/css/main.7ecf9349.chunk.css.map",
+    "static/js/2.59297334.chunk.js.LICENSE.txt": "/react-test-project-gql/static/js/2.59297334.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5c027570.js",
+    "static/js/2.59297334.chunk.js",
+    "static/css/main.7ecf9349.chunk.css",
+    "static/js/main.dd018d9c.chunk.js"
+  ]
+}
