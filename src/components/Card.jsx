@@ -1,11 +1,11 @@
 import React, { useContext, useCallback, useMemo } from "react"
 import AppContext from "../AppContext"
 
-const Card = ({ name, id, children }) => {
+const Card = ({ name, id: _id, children, code }) => {
   const { activeCards, setActiveCard } = useContext(AppContext)
-  const isActive = useMemo(() => activeCards.find((cardId) => cardId === id), [
+  const isActive = useMemo(() => activeCards.find((cardId) => cardId === _id), [
     activeCards,
-    id,
+    _id,
   ])
 
   const childProps = {
@@ -22,19 +22,21 @@ const Card = ({ name, id, children }) => {
 
   const setActiveCallback = useCallback(
     (id) => {
-      const newActiveCards = activeCards.includes(id)
-        ? activeCards.filter((cardId) => cardId !== id)
-        : activeCards.concat(id)
+      const newActiveCards = children
+        ? activeCards.includes(id)
+          ? activeCards.filter((cardId) => cardId !== id)
+          : activeCards.concat(id)
+        : activeCards.filter((cardId) => !cardId.includes(_id.substring(0, 2)))
       setActiveCard(newActiveCards)
     },
-    [setActiveCard, activeCards]
+    [setActiveCard, activeCards, children, _id]
   )
 
   return (
     <>
       <div
         className="card__container"
-        onClick={setActiveCallback.bind(null, id)}
+        onClick={setActiveCallback.bind(null, _id)}
         {...parentProps}
       >
         <div>{name}</div>
@@ -42,7 +44,7 @@ const Card = ({ name, id, children }) => {
       <div className="card__container_list" {...childProps}>
         {children &&
           children.map((item, index) => {
-            const id = `${item.code}${index}${index}`
+            const id = `${_id}${item.code}${index}`
             return <Card key={id} {...item} id={id} />
           })}
       </div>
