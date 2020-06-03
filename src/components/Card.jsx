@@ -22,11 +22,14 @@ const Card = ({ name, id: _id, children }) => {
 
   const setActiveCallback = useCallback(
     (id) => {
-      const newActiveCards = children
-        ? activeCards.includes(id)
-          ? activeCards.filter((cardId) => cardId !== id)
-          : activeCards.concat(id)
-        : activeCards.filter((cardId) => !cardId.includes(_id.substring(0, 2)))
+      const newActiveCards =
+        children && children.length
+          ? activeCards.includes(id)
+            ? activeCards.filter((cardId) => cardId !== id)
+            : activeCards.concat(id)
+          : activeCards.filter(
+              (cardId) => !cardId.includes(_id.substring(0, 2))
+            )
       setActiveCard(newActiveCards)
     },
     [setActiveCard, activeCards, children, _id]
