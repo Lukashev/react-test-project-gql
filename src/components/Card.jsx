@@ -1,7 +1,7 @@
 import React, { useContext, useCallback, useMemo } from "react"
 import AppContext from "../AppContext"
 
-const Card = ({ name, id: _id, children, code }) => {
+const Card = ({ name, id: _id, children }) => {
   const { activeCards, setActiveCard } = useContext(AppContext)
   const isActive = useMemo(() => activeCards.find((cardId) => cardId === _id), [
     activeCards,
